@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="description" content="DOCTOR DOOM EA — Premium Mobile EA VPS. Run your Expert Advisors 24/7 from your phone with enterprise-grade reliability.">
+<title>DOCTOR DOOM EA | Elite Mobile EA VPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #0A2B4E;
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --blue-deep: #0A2B4E;
+    --blue-primary: #1E4A7A;
+    --blue-accent: #2266CC;
+    --blue-soft: #F0F6FF;
+    --blue-glow: rgba(34,102,204,0.15);
+    --blue-border: #E2EDF7;
+    --white-pure: #FFFFFF;
+    --gray-light: #F8FBFE;
+    --text-muted: #4A627A;
+    --whatsapp-green: #25D366;
+    --whatsapp-green-dark: #128C7E;
+    --shadow-sm: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+    --shadow-md: 0 12px 28px rgba(0,0,0,0.04);
+    --shadow-lg: 0 25px 40px -12px rgba(0,0,0,0.1);
+    --radius-xl: 32px;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 14px;
+    --transition-smooth: cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--blue-deep);
+  }
+  h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.1; }
+  h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 16px; }
+  h3 { font-size: 22px; margin-bottom: 12px; }
+  p { color: var(--text-muted); font-size: 16px; line-height: 1.6; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(20px);
+    border-radius: 80px;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(34,102,204,0.12);
+    animation: navSlideIn 0.6s var(--transition-smooth);
+  }
+  @keyframes navSlideIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 20px; color: var(--blue-primary); }
+  .brand-dot { width: 10px; height: 10px; background: var(--blue-accent); border-radius: 50%; box-shadow: 0 0 8px var(--blue-accent); animation: pulseDot 2s ease-in-out infinite; }
+  @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.2); } }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { color: var(--blue-deep); font-weight: 500; font-size: 14px; text-decoration: none; position: relative; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--blue-accent); }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--blue-accent); transition: width 0.3s var(--transition-smooth); border-radius: 2px; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta { background: var(--blue-accent); color: white !important; padding: 8px 22px; border-radius: 40px; font-weight: 700; box-shadow: 0 2px 8px rgba(34,102,204,0.2); transition: all 0.3s var(--transition-spring) !important; }
+  .nav-cta:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(34,102,204,0.35); background: #1558b0; }
+  .nav-cta::after { display: none; }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; flex-direction: column; justify-content: center; gap: 5px; }
+  .mobile-toggle span { height: 2px; width: 22px; background: var(--blue-deep); border-radius: 2px; transition: 0.2s; }
+  .mobile-menu { display: none; position: fixed; top: 85px; left: 20px; right: 20px; background: white; border-radius: 28px; padding: 24px; flex-direction: column; gap: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--blue-border); z-index: 999; animation: menuFadeIn 0.3s var(--transition-smooth); }
+  @keyframes menuFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 800px) { .nav-links { display: none; } .mobile-toggle { display: flex; } .nav { padding: 10px 20px; } }
+
+  /* Hero */
+  .hero { padding: 140px 0 80px; background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-soft); padding: 6px 18px; border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--blue-accent); margin-bottom: 24px; border: 1px solid rgba(34,102,204,0.2); animation: fadeUp 0.8s var(--transition-smooth); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .hero h1 { animation: fadeUp 0.8s var(--transition-smooth) 0.1s both; }
+  .hero-desc { font-size: 18px; margin: 24px 0 32px; max-width: 500px; animation: fadeUp 0.8s var(--transition-smooth) 0.2s both; }
+  .btn-group { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; animation: fadeUp 0.8s var(--transition-smooth) 0.3s both; }
+  
+  /* ANIMATED BUTTONS */
+  .btn-primary, .btn-outline, .price-btn, .popup-btn, .nav-cta, .whatsapp-btn {
+    transition: all 0.35s var(--transition-spring);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary { background: var(--blue-accent); color: white; padding: 14px 28px; border-radius: 60px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 14px rgba(34,102,204,0.25); text-decoration: none; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(34,102,204,0.35); background: #1558b0; }
+  .btn-primary:active { transform: translateY(1px) scale(0.98); }
+  .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.6s ease; }
+  .btn-primary:hover::before { left: 100%; }
+  
+  .btn-outline { background: transparent; border: 1.5px solid var(--blue-accent); color: var(--blue-accent); padding: 14px 28px; border-radius: 60px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .btn-outline:hover { transform: translateY(-3px) scale(1.02); background: rgba(34,102,204,0.08); box-shadow: 0 8px 20px rgba(34,102,204,0.15); border-color: var(--blue-accent); }
+  .btn-outline:active { transform: translateY(1px) scale(0.98); }
+  
+  /* WhatsApp Button */
+  .whatsapp-btn {
+    background: var(--whatsapp-green);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 60px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    font-size: 14px;
+  }
+  .whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: var(--whatsapp-green-dark);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  }
+  .whatsapp-btn:active { transform: translateY(1px) scale(0.98); }
+  .whatsapp-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.6s ease; }
+  .whatsapp-btn:hover::before { left: 100%; }
+  
+  .support-card { display: flex; align-items: center; gap: 12px; background: white; border-radius: 80px; padding: 12px 24px; width: fit-content; box-shadow: var(--shadow-sm); border: 1px solid var(--blue-border); animation: fadeUp 0.8s var(--transition-smooth) 0.4s both; transition: all 0.3s var(--transition-spring); }
+  .support-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  
+  /* Floating WhatsApp Icon */
+  .floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    animation: floatWhatsApp 0.8s var(--transition-spring) 0.5s both, pulseWhatsApp 2s ease-in-out infinite;
+  }
+  @keyframes floatWhatsApp {
+    from { opacity: 0; transform: scale(0) translateY(50px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  @keyframes pulseWhatsApp {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  }
+  .floating-whatsapp a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--whatsapp-green);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s var(--transition-spring);
+  }
+  .floating-whatsapp a:hover {
+    transform: scale(1.1);
+    background: var(--whatsapp-green-dark);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+  }
+  .floating-whatsapp svg {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+    stroke-width: 1.5;
+  }
+  
+  .hero-visual { position: relative; display: flex; justify-content: center; animation: fadeUp 0.8s var(--transition-smooth) 0.2s both; }
+  .phone-mock { max-width: 280px; width: 100%; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.05)); animation: floatPhone 5s ease-in-out infinite; }
+  @keyframes floatPhone { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .float-badge { position: absolute; background: white; padding: 12px 20px; border-radius: 60px; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--blue-border); backdrop-filter: blur(4px); font-weight: 600; font-size: 13px; color: var(--blue-deep); animation: badgeFloat 4s ease-in-out infinite; }
+  .badge1 { top: 5%; left: -8%; animation-delay: 0s; }
+  .badge2 { bottom: 15%; right: -8%; animation-delay: 1s; }
+  @keyframes badgeFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero-desc { margin-left: auto; margin-right: auto; } .btn-group { justify-content: center; } .support-card { margin: 0 auto; } .badge1, .badge2 { display: none; } }
+
+  /* Stats */
+  .stats { padding: 40px 0 60px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+  .stat-card { background: var(--gray-light); border-radius: var(--radius-md); padding: 32px 20px; text-align: center; border: 1px solid var(--blue-border); transition: all 0.4s var(--transition-spring); cursor: default; }
+  .stat-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-md); border-color: var(--blue-accent); }
+  .stat-num { font-size: 42px; font-weight: 800; color: var(--blue-accent); }
+  @media (max-width: 700px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+
+  /* Sections */
+  .section { padding: 80px 0; }
+  .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+  .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+  .feature-card { background: white; border-radius: var(--radius-lg); padding: 36px 28px; border: 1px solid var(--blue-border); transition: all 0.4s var(--transition-spring); box-shadow: var(--shadow-sm); cursor: default; }
+  .feature-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-lg); border-color: var(--blue-accent); }
+  .feature-icon { width: 64px; height: 64px; background: var(--blue-soft); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--blue-accent); transition: transform 0.3s var(--transition-spring); }
+  .feature-card:hover .feature-icon { transform: scale(1.1) rotate(-2deg); }
+  .feature-card p { font-size: 14px; }
+
+  /* Pricing */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+  .price-card { background: white; border-radius: var(--radius-lg); padding: 40px 28px; border: 1px solid var(--blue-border); transition: all 0.4s var(--transition-spring); position: relative; }
+  .price-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--blue-accent); }
+  .price-card.featured { border-color: var(--blue-accent); box-shadow: 0 15px 35px rgba(34,102,204,0.08); background: linear-gradient(white, #F9FDFF); }
+  .popular-tag { position: absolute; top: -12px; right: 24px; background: var(--blue-accent); color: white; font-size: 11px; font-weight: 800; padding: 5px 16px; border-radius: 40px; animation: pulseTag 2s ease-in-out infinite; }
+  @keyframes pulseTag { 0%,100% { box-shadow: 0 2px 8px rgba(34,102,204,0.3); } 50% { box-shadow: 0 4px 16px rgba(34,102,204,0.5); } }
+  .price-amount { font-size: 48px; font-weight: 800; color: var(--blue-deep); }
+  .price-features { list-style: none; margin: 28px 0; }
+  .price-features li { padding: 10px 0; display: flex; gap: 12px; font-size: 14px; align-items: center; }
+  .price-features li svg { flex-shrink: 0; transition: transform 0.2s; }
+  .price-card:hover .price-features li svg { transform: scale(1.1); }
+  .price-btn { display: block; text-align: center; background: var(--blue-soft); padding: 14px; border-radius: 60px; font-weight: 700; color: var(--blue-accent); margin-top: 24px; text-decoration: none; transition: all 0.35s var(--transition-spring); }
+  .price-btn:hover { transform: translateY(-3px) scale(1.02); background: var(--blue-accent); color: white; box-shadow: 0 8px 20px rgba(34,102,204,0.3); }
+  .price-btn.accent { background: var(--blue-accent); color: white; }
+  .price-btn.accent:hover { background: #1558b0; transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(34,102,204,0.4); }
+  @media (max-width: 800px) { .features-grid, .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+  /* Steps */
+  .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+  .step-card { text-align: center; background: var(--gray-light); border-radius: var(--radius-md); padding: 40px 24px; border: 1px solid var(--blue-border); transition: all 0.4s var(--transition-spring); cursor: default; }
+  .step-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--blue-accent); }
+  .step-num { font-size: 52px; font-weight: 800; color: var(--blue-accent); opacity: 0.4; margin-bottom: 16px; transition: all 0.3s; }
+  .step-card:hover .step-num { opacity: 0.8; transform: scale(1.05); }
+  @media (max-width: 700px) { .steps-grid { grid-template-columns: 1fr; } }
+
+  /* Globe */
+  .globe-section { background: var(--gray-light); border-radius: var(--radius-xl); margin: 40px 0; text-align: center; padding: 48px 20px; transition: all 0.4s var(--transition-spring); }
+  .globe-section:hover { transform: scale(1.01); box-shadow: var(--shadow-md); }
+  .globe-img svg { max-width: 100%; height: auto; transition: transform 0.5s; }
+  .globe-section:hover .globe-img svg { transform: scale(1.02); }
+
+  /* Footer */
+  .footer { border-top: 1px solid var(--blue-border); padding: 50px 0 30px; text-align: center; }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--transition-smooth); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Popup */
+  .popup-overlay { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); backdrop-filter: blur(5px); visibility: hidden; opacity: 0; transition: 0.25s; }
+  .popup-overlay.show { visibility: visible; opacity: 1; }
+  .popup-card { max-width: 400px; width: 90%; background: white; border-radius: 40px; padding: 40px 32px; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--blue-border); transform: scale(0.9); transition: transform 0.4s var(--transition-spring); }
+  .popup-overlay.show .popup-card { transform: scale(1); }
+  .popup-icon { background: var(--blue-soft); width: 80px; height: 80px; border-radius: 40px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; animation: popupIconPulse 1.5s ease-in-out infinite; }
+  @keyframes popupIconPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,102,204,0.2); } 50% { box-shadow: 0 0 0 12px rgba(34,102,204,0); } }
+  .popup-btn { background: var(--blue-accent); color: white; padding: 14px; border-radius: 60px; font-weight: bold; display: block; margin: 24px 0 12px; text-decoration: none; transition: all 0.35s var(--transition-spring); }
+  .popup-btn:hover { transform: translateY(-3px) scale(1.02); background: #1558b0; box-shadow: 0 8px 24px rgba(34,102,204,0.4); }
+  .popup-dismiss { background: none; border: none; color: var(--text-muted); font-size: 13px; cursor: pointer; transition: all 0.3s; padding: 8px 16px; border-radius: 40px; }
+  .popup-dismiss:hover { color: var(--blue-accent); transform: translateY(-2px); background: var(--blue-soft); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><div class="brand-dot"></div> DOCTOR DOOM EA</div>
+  <div class="nav-links">
+    <a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#how-it-works">Setup</a>
+    <a href="https://doctordoomeae.base44.app" target="_blank" rel="noopener noreferrer" class="nav-cta">Mentor Sign In</a>
+    <a href="https://doctordoomeae.base44.app" target="_blank" rel="noopener noreferrer" class="nav-cta" style="background:#0A2B4E;">Sign Up</a>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#how-it-works">Setup</a>
+  <a href="https://doctordoomeae.base44.app" target="_blank" rel="noopener noreferrer">Mentor Sign In</a>
+  <a href="https://doctordoomeae.base44.app" target="_blank" rel="noopener noreferrer">Sign Up</a>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#2266CC" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#2266CC" stroke-width="1.5"/></svg> MOBILE EA VPS</div>
+        <h1>Your EAs,<br>Running <span style="color:var(--blue-accent);">24/7</span><br>From Your Phone.</h1>
+        <p class="hero-desc">The first mobile VPS built for elite traders — DOCTOR DOOM EA keeps your Expert Advisors alive, executing non‑stop.</p>
+        <div class="btn-group">
+          <a href="app-release (11).apk" download class="btn-primary" id="androidDownloadBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Android</a>
+          <a href="https://doctordoomea.lovable.app" target="_blank" rel="noopener noreferrer" class="btn-outline"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 3a3 3 0 00-3 3v12a3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3H6a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3h12a3 3 0 003-3 3 3 0 00-3-3z"/></svg> Download iOS</a>
+        </div>
+        <div class="support-card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          <div><strong>Need help?</strong> support@doomvps.host</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="float-badge badge1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2266CC"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg> Real-time alerts</div>
+        <div class="float-badge badge2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2266CC"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Sub-ms latency</div>
+        <img class="phone-mock" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 400'%3E%3Crect width='200' height='400' rx='32' fill='%23F0F4FE'/%3E%3Crect x='16' y='24' width='168' height='330' rx='16' fill='%23FFFFFF' stroke='%232266CC' stroke-width='1.5'/%3E%3Ccircle cx='100' cy='372' r='6' fill='%232266CC'/%3E%3Ctext x='44' y='80' font-size='10' fill='%231E4A7A' font-weight='bold'%3EDOCTOR DOOM EA%3C/text%3E%3Crect x='32' y='100' width='136' height='48' rx='12' fill='%23EFF6FF'/%3E%3Ctext x='52' y='128' font-size='10' fill='%232266CC'%3EActive: 3 EAs online%3C/text%3E%3Crect x='32' y='170' width='136' height='28' rx='8' fill='%23E9F0FA'/%3E%3Ctext x='44' y='188' font-size='9' fill='%234A627A'%3EProfit +2.4%25 today%3C/text%3E%3C/svg%3E" alt="Doctor Doom EA app">
+      </div>
+    </div>
+  </section>
+
+  <section class="stats"><div class="container stats-grid">
+    <div class="stat-card reveal"><div class="stat-num">905+</div><div class="stat-label">Global Access Points</div></div>
+    <div class="stat-card reveal"><div class="stat-num">99.99%</div><div class="stat-label">Uptime SLA</div></div>
+    <div class="stat-card reveal"><div class="stat-num">&lt;1ms</div><div class="stat-label">Avg Latency</div></div>
+    <div class="stat-card reveal"><div class="stat-num">24/7</div><div class="stat-label">Elite Support</div></div>
+  </div></section>
+
+  <section class="section" id="features"><div class="container">
+    <div class="section-header reveal"><div class="badge" style="margin:0 auto 12px; width:fit-content;">CORE ADVANTAGES</div><h2>Built for Traders Who Never Miss a Move</h2><p>Enterprise‑grade infrastructure, mobile‑first experience.</p></div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Ultra-Low Latency</h3><p>Sub-millisecond execution — precise entries, no slippage.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3>Bank-Grade Security</h3><p>Encrypted vaults, isolated environments, DDoS protection.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Always On 24/7</h3><p>Non‑stop uptime, failover infrastructure, zero downtime.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="pricing"><div class="container">
+    <div class="section-header reveal"><div class="badge" style="margin:0 auto 12px;">PRICING</div><h2>Simple, transparent plans</h2><p>All plans include unlimited EA connections & premium dashboard.</p></div>
+    <div class="pricing-grid">
+      <div class="price-card reveal"><div class="price-amount">$33.99</div><div class="price-period">per month, billed monthly</div><ul class="price-features"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>1–3 Expert Advisors</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Android & iOS app</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>24/7 operation</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>MT4/MT5 support</li></ul><a href="#" class="price-btn">Get Started</a></div>
+      <div class="price-card featured reveal"><div class="popular-tag">MOST POPULAR</div><div class="price-amount">$79.99</div><div class="price-period">3 months — save $22</div><ul class="price-features"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Up to 5 EAs</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>99.99% SLA</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Early feature access</li></ul><a href="#" class="price-btn accent">Get Best Value</a></div>
+      <div class="price-card reveal"><div class="price-amount">$349.99</div><div class="price-period">per year — save $57</div><ul class="price-features"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Unlimited EAs*</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Dedicated channel</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>VIP onboarding</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>All premium features</li></ul><a href="#" class="price-btn">Get Started</a></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="how-it-works"><div class="container">
+    <div class="section-header reveal"><div class="badge" style="margin:0 auto 12px;">HOW IT WORKS</div><h2>Go live in 3 steps</h2><p>From download to live trading in minutes.</p></div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">01</div><h3>Subscribe to DOCTOR DOOM EA</h3><p>Pick a plan and get instant access to the mobile VPS dashboard.</p></div>
+      <div class="step-card reveal"><div class="step-num">02</div><h3>Get your license key</h3><p>Purchase EA license from your mentor and activate your robot.</p></div>
+      <div class="step-card reveal"><div class="step-num">03</div><h3>Link & go live</h3><p>Connect EA to VPS, link MT4/MT5 and start automated 24/7 trading.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container globe-section reveal"><div class="badge" style="margin:0 auto 16px; width:fit-content;">🌍 GLOBAL INFRASTRUCTURE</div><h2>Active worldwide</h2><p>905+ points of presence, low‑latency execution in all major hubs.</p><div class="globe-img"><svg width="100%" viewBox="0 0 600 200" fill="none"><circle cx="300" cy="100" r="80" stroke="#2266CC" stroke-width="1.5" fill="#F0F6FF"/><circle cx="300" cy="100" r="55" stroke="#2266CC" stroke-dasharray="3 3" fill="none"/><circle cx="220" cy="70" r="4" fill="#2266CC"/><circle cx="360" cy="120" r="4" fill="#2266CC"/><circle cx="280" cy="50" r="3" fill="#2266CC"/><circle cx="340" cy="70" r="3" fill="#2266CC"/><circle cx="400" cy="100" r="3" fill="#2266CC"/><circle cx="180" cy="130" r="3" fill="#2266CC"/><text x="280" y="110" font-size="10" fill="#1E4A7A" font-weight="bold">905+ Nodes</text></svg></div></div></section>
+</main>
+
+<footer class="footer"><div class="container"><div class="brand" style="justify-content:center; margin-bottom:12px;">⚡ DOCTOR DOOM EA</div><p style="margin: 12px 0;">Your EAs, always on. Powered by Mobile VPS.</p><div style="height:1px; background:#E2EDF7; width: 80px; margin: 20px auto;"></div><p style="font-size:13px;">© 2026 DOCTOR DOOM EA — All rights reserved. support@doomvps.host</p></div></footer>
+
+<!-- Floating WhatsApp Support Button -->
+<div class="floating-whatsapp">
+  <a href="https://wa.me/27719577335?text=Hello%20DOCTOR%20DOOM%20EA%20team%2C%20I%20need%20support%20with%20my%20EA%20VPS" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- WhatsApp Support Button in Hero Section (Additional) -->
+<div style="position: fixed; bottom: 110px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 12px;">
+  <a href="https://wa.me/27719577335?text=Hello%20DOCTOR%20DOOM%20EA%20team%2C%20I%20need%20assistance%20with%20my%20account" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" style="background: #25D366; color: white; padding: 10px 18px; border-radius: 50px; font-size: 13px; gap: 8px; box-shadow: 0 4px 12px rgba(37,211,102,0.3);">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    WhatsApp Support
+  </a>
+</div>
+
+<div class="popup-overlay" id="brokerPopup"><div class="popup-card"><div class="popup-icon"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2266CC" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3 style="margin-bottom: 8px;">200% Deposit Bonus!</h3><p style="font-size: 14px;">Deposit $100, trade with $300. Open account with <strong>Razor Markets</strong> — EA friendly.</p><div style="display: flex; gap: 12px; justify-content: center; margin: 15px 0;"><span style="display:flex; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2266CC"><polyline points="20 6 9 17 4 12"/></svg>200% Bonus</span><span style="display:flex; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2266CC"><polyline points="20 6 9 17 4 12"/></svg>Low Spreads</span><span style="display:flex; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2266CC"><polyline points="20 6 9 17 4 12"/></svg>EA Friendly</span></div><a href="#" target="_blank" class="popup-btn" id="claimBonusBtn">Claim 200% Bonus Now →</a><button class="popup-dismiss" id="closePopupBtn">Maybe later</button></div></div>
+
+<script>
+  const toggleBtn = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.display === 'flex';
+      mobileMenu.style.display = isOpen ? 'none' : 'flex';
+    });
+  }
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const popup = document.getElementById('brokerPopup');
+  const closePopup = () => popup.classList.remove('show');
+  setTimeout(() => {
+    if (!sessionStorage.getItem('popupShown')) {
+      popup.classList.add('show');
+      sessionStorage.setItem('popupShown', 'true');
+    }
+  }, 1800);
+  document.getElementById('closePopupBtn')?.addEventListener('click', closePopup);
+  document.getElementById('claimBonusBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    closePopup();
+    window.open('https://crm.razormarkets.co.za/links/go/443', '_blank');
+  });
+  popup?.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+</script>
+</body>
+</html>
